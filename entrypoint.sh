@@ -1,10 +1,8 @@
 #!/bin/bash
 # ZoneMinder Dockerfile entrypoint script
-# Written by Andrew Bauer <zonexpertconsulting@outlook.com>
-#
-# This script will start mysql, apache, and zoneminder services.
-# It looks in common places for the files & executables it needs
-# and thus should be compatible with major Linux distros.
+# inspired by Andrew Bauer <zonexpertconsulting@outlook.com>
+# edited by ArtemProc
+
 
 ###############
 # SUBROUTINES #

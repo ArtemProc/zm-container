@@ -2,6 +2,12 @@
 
 created based on the original entrypoint.sh from https://github.com/ZoneMinder/zmdockerfiles/blob/master/utils/entrypoint.sh
 
+Addressed original entrypoint.sh issues I have faced during testing:
+
+* was not having check for ZM tables in the external DB added.
+* folder permissions for /var/cache/zoneminder/events
+* PHPINI file location
+
 Based image for container Ubuntu 22.04
 
 It is possible to run with docker compose with external DB from mariad:11.2.6 image (no changes)
