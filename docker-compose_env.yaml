@@ -1,0 +1,36 @@
+services:
+    mysql_cont:
+        container_name: mysql_cont
+        image: mariadb:11.2.6-jammy
+        restart: always
+        command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --default-time-zone=Europe/Amsterdam
+        environment:
+            - MYSQL_PASSWORD=${ZM_DB_PASS}
+            - MYSQL_DATABASE=${ZM_DB_NAME}
+            - MYSQL_USER=${ZM_DB_USER}
+            - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+        volumes:
+            - ./db:/var/lib/mysql
+    zoneminder:
+        container_name: zoneminder
+        image: artempro/test-repo:zm-artem-container-beta3
+        restart: always
+        links:
+            - mysql_cont
+        ports:
+            - 7878:80
+        shm_size: 2G
+        environment:
+            - TZ=${TZ:-Europe/Amsterdam}
+            - ZM_DB_HOST=${ZM_DB_HOST}
+            - ZM_DB_NAME=${ZM_DB_NAME}
+            - ZM_DB_USER=${ZM_DB_USER}
+            - ZM_DB_PASS=${ZM_DB_PASS}
+        volumes:
+            - ./events:/var/cache/zoneminder/events
+            - ./images:/var/cache/zoneminder/images
+            - ./mysql:/var/lib/mysql
+            - ./logs:/var/log/zm
+#        tmpfs:
+#            - /run
+#            - /tmp
