@@ -13,7 +13,7 @@ services:
             - ./db:/var/lib/mysql
     zoneminder:
         container_name: zoneminder
-        image: artempro/test-repo:zm-artem-container-beta3
+        image: ${ZM_IMAGE}
         restart: always
         links:
             - mysql_cont
