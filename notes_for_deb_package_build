@@ -1,0 +1,58 @@
+notes to build from source:
+
+
+    2  apt-get update
+    3  wget https://raw.githubusercontent.com/ZoneMinder/ZoneMinder/master/utils/do_debian_package.sh
+    4  apt-get install wget
+    5  wget https://raw.githubusercontent.com/ZoneMinder/ZoneMinder/master/utils/do_debian_package.sh
+    6  chmod a+x do_debian_package.sh
+    7  ./do_debian_package.sh --snapshot=NOW --branch=master --type=local
+    8  apt-get install devscripts
+   18  apt install sphinx-doc python3-sphinx python3-sphinx-rtd-theme dh-linktree dh-apache2 cmake libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev ffmpeg arp-scan net-tools libbz2-dev libcurl4-gnutls-dev  libjpeg9-dev libturbojpeg0-dev  libmariadbclient-dev-compat libpolkit-gobject-1-dev libv4l-dev libvlc-dev libdate-manip-perl libdbd-mysql-perl libphp-serialization-perl libsys-mmap-perl libdata-uuid-perl libssl-dev libcrypt-eksblowfish-perl libdata-entropy-perl libvncserver-dev  libjwt-dev libgsoap-dev gsoap libmosquittopp-dev nlohmann-json3-dev
+   19  apt install sphinx-doc python3-sphinx python3-sphinx-rtd-theme dh-linktree dh-apache2 cmake libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev ffmpeg arp-scan net-tools libbz2-dev libcurl4-gnutls-dev  libturbojpeg0-dev  libmariadbclient-dev-compat libpolkit-gobject-1-dev libv4l-dev libvlc-dev libdate-manip-perl libdbd-mysql-perl libphp-serialization-perl libsys-mmap-perl libdata-uuid-perl libssl-dev libcrypt-eksblowfish-perl libdata-entropy-perl libvncserver-dev  libjwt-dev libgsoap-dev gsoap libmosquittopp-dev nlohmann-json3-dev
+   20  ./do_debian_package.sh --snapshot=stable --type=local
+   21  apt install libpcre3-dev
+   22  ./do_debian_package.sh --snapshot=stable --type=local
+   
+   27  ./do_debian_package.sh --snapshot=stable --type=local
+   
+   29  ./do_debian_package.sh --snapshot=NOW --branch=master --type=local
+   
+
+   The following additional packages will be installed:
+  default-mysql-client iproute2 libalgorithm-c3-perl libappconfig-perl libatm1t64 libbpf1 libcap2-bin libclass-c3-perl
+  libclass-c3-xs-perl libclass-inspector-perl libclass-load-perl libclass-singleton-perl libclass-std-fast-perl
+  libclass-std-perl libconvert-binhex-perl libdatetime-locale-perl libdatetime-perl libdatetime-timezone-perl
+  libdevel-caller-perl libdevel-lexalias-perl libdevice-serialport-perl libemail-date-format-perl libestr0
+  libeval-closure-perl libfastjson4 libfile-sharedir-perl libfile-slurp-perl libimage-base-bundle-perl libimage-info-perl
+  libio-interface-perl libio-sessiondata-perl libio-socket-multicast-perl libio-stringy-perl libmime-lite-perl
+  libmime-tools-perl libmime-types-perl libmnl0 libmro-compat-perl libnamespace-autoclean-perl libnet-sftp-foreign-perl
+  libnumber-bytes-human-perl libpadwalker-perl libpam-cap libparams-validationcompiler-perl libpopt0 libreadonly-perl
+  libref-util-perl libref-util-xs-perl libsoap-lite-perl libsoap-wsdl-perl libspecio-perl libsys-cpu-perl
+  libsys-meminfo-perl libtask-weaken-perl libtemplate-perl liburi-encode-perl libxml-simple-perl libxmlrpc-lite-perl
+  libxslt1.1 libxstring-perl libxtables12 logrotate mysql-client-8.0 mysql-client-core-8.0 php-apcu php-common php-curl
+  php-gd php-intl php-mysql php-xml php8.3-apcu php8.3-cli php8.3-common php8.3-curl php8.3-gd php8.3-intl php8.3-mysql
+  php8.3-opcache php8.3-phpdbg php8.3-readline php8.3-xml pkexec policykit-1 polkitd psmisc rsyslog sudo zip
+Suggested packages:
+  iproute2-doc default-mta | mail-transport-agent libmojolicious-perl libapache2-mod-perl2 libnet-jabber-perl
+  libtest-fatal-perl libtemplate-plugin-gd-perl libtemplate-plugin-xml-perl bsd-mailx | mailx php-pear polkitd-pkla
+  rsyslog-mysql | rsyslog-pgsql rsyslog-mongodb rsyslog-doc rsyslog-openssl | rsyslog-gnutls rsyslog-gssapi rsyslog-relp
+  apparmor
+The following NEW packages will be installed:
+  default-mysql-client iproute2 libalgorithm-c3-perl libappconfig-perl libatm1t64 libbpf1 libcap2-bin libclass-c3-perl
+  libclass-c3-xs-perl libclass-inspector-perl libclass-load-perl libclass-singleton-perl libclass-std-fast-perl
+  libclass-std-perl libconvert-binhex-perl libdatetime-locale-perl libdatetime-perl libdatetime-timezone-perl
+  libdevel-caller-perl libdevel-lexalias-perl libdevice-serialport-perl libemail-date-format-perl libestr0
+  libeval-closure-perl libfastjson4 libfile-sharedir-perl libfile-slurp-perl libimage-base-bundle-perl libimage-info-perl
+  libio-interface-perl libio-sessiondata-perl libio-socket-multicast-perl libio-stringy-perl libmime-lite-perl
+  libmime-tools-perl libmime-types-perl libmnl0 libmro-compat-perl libnamespace-autoclean-perl libnet-sftp-foreign-perl
+  libnumber-bytes-human-perl libpadwalker-perl libpam-cap libparams-validationcompiler-perl libpopt0 libreadonly-perl
+  libref-util-perl libref-util-xs-perl libsoap-lite-perl libsoap-wsdl-perl libspecio-perl libsys-cpu-perl
+  libsys-meminfo-perl libtask-weaken-perl libtemplate-perl liburi-encode-perl libxml-simple-perl libxmlrpc-lite-perl
+  libxslt1.1 libxstring-perl libxtables12 logrotate mysql-client-8.0 mysql-client-core-8.0 php-apcu php-common php-curl
+  php-gd php-intl php-mysql php-xml php8.3-apcu php8.3-cli php8.3-common php8.3-curl php8.3-gd php8.3-intl php8.3-mysql
+  php8.3-opcache php8.3-phpdbg php8.3-readline php8.3-xml pkexec policykit-1 polkitd psmisc rsyslog sudo zip
+
+
+
+   37  dpkg -i zoneminder_1.37.71~20250924204749-noble_amd64.deb 
