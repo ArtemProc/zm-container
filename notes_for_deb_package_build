@@ -12,7 +12,7 @@ chmod a+x do_debian_package.sh
   
 ./do_debian_package.sh --snapshot=NOW --branch=master --type=local
    
-./do_debian_package.sh --snapshot=stable --type=local
+./do_debian_package.sh --snapshot=stable --type=local --distro=noble
    
    
 dpkg -i zoneminder_1.37.71~20250924204749-noble_amd64.deb 
